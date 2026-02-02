@@ -121,78 +121,85 @@ body{
 </style>
 </head>
 
-<body>
-
-<div class="header">
+<body class='loading' oncontextmenu='return false;' ondragstart='return false' onkeydown='return false;' onmousedown='return false;' onselectstart='return false' style='-moz-user-select: none; cursor: default;'>
+<div class='header'>
   <h1>BERKAH JAYA ABADI TEKNIK</h1>
-  <p>Mang Ayi Service • Jasa Service Elektronik Sukabumi</p>
+  <p>Mang Ayi Service &#8226; Jasa Service Elektronik Sukabumi - Cianjur</p>
 </div>
-
-<div class="container">
+<div class='navbar'>
+  <a class='active' href='/'>Home</a>
+  <a href='/p/katalog.html'>Layanan</a>
+  <a href='/p/donasi.html'>Donasi</a>
+  <a href='/p/profil-teknisi.html'>Profile</a>
+</div>
+<div class='container'>
 
   <!-- LAYANAN -->
-  <div class="card">
-    <span class="badge">🔧 Layanan Profesional</span>
-    <div class="services">
+   <div class='card'>
+    <span class='badge'>🔧 Layanan Profesional</span>
+    <div class='services'>
       <ul>
         <li>Service Kulkas / Freezer / Showcase</li>
         <li>Service Mesin Cuci</li>
         <li>Service Kipas Angin</li>
-        <li>Service Blender & Magic Com</li>
+        <li>Service Blender &amp; Magic Com</li>
         <li>Service Water Heater / Shower</li>
-        <li>Panggilan & Workshop</li>
+        <li>Panggilan &amp; Workshop</li>
       </ul>
     </div>
   </div>
 
   <!-- TOMBOL KONTAK -->
-  <div class="card">
-    <span class="badge">📞 Hubungi Sekarang</span>
+  <div class='card'>
+    <span class='badge'>📞 Hubungi Sekarang</span>
 
-    <div class="btn-grid">
-      <a class="btn call" href="tel:+6285295444864">📞 Call</a>
-      <a class="btn sms" href="sms:+6285295444864">💬 SMS</a>
-      <a class="btn wa" href="https://wa.me/6285295444864">🟢 WhatsApp</a>
-      <a class="btn telegram" href="https://t.me/username_telegram">✈️ Telegram</a>
-      <a class="btn messenger" href="https://m.me/username_fb">💙 Messenger</a>
-      <a class="btn email" href="mailto:emailkamu@gmail.com">✉️ Email</a>
+    <div class='btn-grid'>
+      <a class='btn call' href='tel:+6285295444864'>📞 Call</a>
+      <a class='btn sms' href='sms:+6285295444864'>💬 SMS</a>
+      <a class='btn wa' href='https://wa.me/6285295444864'>🟢 WhatsApp</a>
+      <a class='btn telegram' href='Ayi_service'>&#9992;&#65039; Telegram</a>
+      <a class='btn messenger' href='clicktautan.inisaja'>💙 Messenger</a>
+      <a class='btn email' href='mailto:ayiedadevafsun@gmail.com'>&#9993;&#65039; Email</a>
     </div>
   </div>
-
   <!-- GOOGLE MAPS -->
-  <div class="card">
-    <span class="badge">📍 Lokasi Bengkel</span>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d126731.60428806276!2d106.9023232!3d-6.9664768!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6847d41e47e89f%3A0x7c94ddeb662b2fab!2sMang%20Ayi%20Service!5e0!3m2!1sid!2sid!4v1768571505743!5m2!1sid!2sid"
-      width="100%"
-      height="260"
-      style="border:0;border-radius:14px;"
-      allowfullscreen
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+  <div class='card'>
+    <span class='badge'>📍 Lokasi Bengkel</span>
+    <iframe allowfullscreen='allowfullscreen' height='260' loading='lazy' referrerpolicy='no-referrer-when-downgrade' src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d126731.60428806276!2d106.9023232!3d-6.9664768!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6847d41e47e89f%3A0x7c94ddeb662b2fab!2sMang%20Ayi%20Service!5e0!3m2!1sid!2sid!4v1768571505743!5m2!1sid!2sid' style='border:0;border-radius:14px;' width='100%'>
     </iframe>
-  </div>
-
-  <!-- SOSIAL MEDIA -->
-  <div class="card">
-    <span class="badge">🌐 Media Sosial</span>
-    <div class="social">
-      <a href="https://facebook.com/">Facebook</a>
-      <a href="https://instagram.com/">Instagram</a>
-      <a href="https://tiktok.com/">TikTok</a>
-      <a href="https://maps.google.com/">Google Maps</a>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer">
-  © <span id="yr"></span> Berkah Jaya Abadi Teknik — Mang Ayi Service
-</div>
+    
+<div id='location'/>
 
 <script>
-document.getElementById("yr").innerHTML = new Date().getFullYear();
+fetch(&#39;https://ipapi.co/json/&#39;) 
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    document.getElementById(&quot;location&quot;).innerText =
+      `Lokasi Anda saat ini📍Kota: ${data.city}, Negara: ${data.country_name}`;
+  })
+  .catch(err =&gt; {
+    document.getElementById(&quot;location&quot;).innerText = &quot;Gagal ambil lokasi&quot;;
+    console.error(err);
+  });
 </script>
 
-</body>
-</html>
+  </div>
+ <!-- SOSIAL MEDIA -->
+  <div class='card'>
+    <span class='badge'>🌐 Media Sosial</span>
+    <div class='social'>
+      <a href='https://facebook.com/ayiedadev.aftersunset'>Facebook</a>
+      <a href='https://instagram.com/ayiedadev'>Instagram</a>
+      <a href='https://tiktok.com/@ayie.dadev'>TikTok</a>
+      <a href='https://youtube.com/@Ayiedadev'>Youtube</a>
+      <a href='https://maps.app.goo.gl/uzVshz2dLU5CAGMPA'>Google Maps</a>
+    </div>
+  </div>
+  <button id='shareBtn' style='   display:flex;   align-items:center;   gap:6px;   background:#ffcc00;   border:none;   padding:8px 14px;   border-radius:30px;   font-weight:bold;   cursor:pointer;   box-shadow:0 2px 5px rgba(0,0,0,0.2); '>
+  <svg fill='#000' height='22' viewBox='0 0 24 24' width='22' xmlns='http://www.w3.org/2000/svg'>
+    <path d='M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7.02-4.11A2.99 2.99 0 1 0 14 5a3 3 0 0 0 0 6c.76 0 1.44-.3 1.96-.77l7.02 4.11a2.5 2.5 0 0 0 0 1.39l-7.02 4.11A2.99 2.99 0 1 0 18 19a3 3 0 0 0 0-6z'/>
+  </svg>
+  <span>Bagikan</span>
+</button>
+</div>
+</div>body></html>
