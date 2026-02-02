@@ -38,7 +38,35 @@ body{
 }
 .header h1{margin:0;font-size:22px;}
 .header p{margin:6px 0 0;font-size:14px;opacity:.9}
+.navbar{
+  background:linear-gradient(135deg,#008ae6,#00b88a);
+  display:flex;
+  justify-content:center;
+  gap:5px;
+  padding:8px;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
 
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  padding:8px 14px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.navbar a:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+.navbar a.active{
+  background:#ffffff;
+  color:#0099ff;
+  font-weight:bold;
+}
 .container{
   max-width:480px;
   margin:auto;
