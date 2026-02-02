@@ -5,19 +5,16 @@
   <title>Redirect…</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-
-  <script>
-  (function(){
-    const p = new URLSearchParams(location.search);
-    let go = p.get("go");
-    if(go){
-      try{
-        go = decodeURIComponent(go);
-      }catch(e){}
-      window.location.replace(go);
-    }
-  })();
-  </script>
+<script>
+(function(){
+  const p = new URLSearchParams(location.search);
+  let go = p.get("go");
+  if(go){
+    go = decodeURIComponent(go); // 🔑 kunci anti rusak
+    location.replace(go);
+  }
+})();
+</script>
 </head>
 
 <body style="margin:0;display:flex;align-items:center;justify-content:center;
