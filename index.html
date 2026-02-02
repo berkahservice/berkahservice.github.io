@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <script>
+(function(){
+  const p = new URLSearchParams(location.search);
+  const go = p.get("go");
+  if(go){
+    window.location.replace(go);
+  }
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
