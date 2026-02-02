@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Live Sports</title>
+  <meta name="description" content="Watch live sports streaming and schedules. Stay updated with the latest matches!">
+  <meta property="og:title" content="Watch Live Sports">
+  <meta property="og:description" content="Watch live sports streaming and schedules. Stay updated with the latest matches!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="https://yourhosting.com/default-thumbnail.jpg">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; color: #333; }
+    .container { max-width: 900px; margin: 30px auto; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); text-align: center; }
+    h1 { font-size: 28px; margin-bottom: 20px; }
+    img { max-width: 100%; border-radius: 10px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container" id="content">
+    <h1>Loading...</h1>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const img = params.get('img') || "https://yourhosting.com/default-thumbnail.jpg";
+
+    if (title) {
+      document.title = `${title} | Watch Live`;
+
+      const content = document.getElementById('content');
+      content.innerHTML = `
+        <img src="${img}" alt="${title}">
+        <h1>Watch Live ${title} Now</h1>
+        <p>Enjoy live streaming, match schedules, and updates for ${title}.</p>
+      `;
+
+      // Update meta tags
+      const desc = `Watch live ${title} now with full streaming and updates.`;
+      document.querySelector('meta[name="description"]').setAttribute('content', desc);
+      document.querySelector('meta[property="og:title"]').setAttribute('content', `${title} | Watch Live`);
+      document.querySelector('meta[property="og:description"]').setAttribute('content', desc);
+      document.querySelector('meta[property="og:image"]').setAttribute('content', img);
+      document.querySelector('meta[property="og:url"]').setAttribute('content', window.location.href);
+    }
+  </script>
+</body>
+</html>
