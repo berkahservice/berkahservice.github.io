@@ -202,4 +202,37 @@ fetch(&#39;https://ipapi.co/json/&#39;)
   <span>Bagikan</span>
 </button>
 </div>
-</div>body></html>
+</div>
+  <div class='footer' style='text-align:center;padding:15px;font-size:12px;color:#777;background:#f4f6fb;'>
+  <a href='/p/about.html' style='color:#ff416c;text-decoration:none;margin:0 8px;'>About</a> |
+  <a href='/p/privacy-policy.html' style='color:#ff416c;text-decoration:none;margin:0 8px;'>Privacy Policy</a> |
+  <a href='/p/disclaimer.html' style='color:#ff416c;text-decoration:none;margin:0 8px;'>Disclaimer</a> |
+  <a href='/p/contact.html' style='color:#ff416c;text-decoration:none;margin:0 8px;'>Contact</a>
+  <br/>
+  &#169; <span id='yr'/> Berkah Jaya Abadi Teknik &#8212; Mang Ayi Service
+</div>
+
+<script>
+document.getElementById(&quot;yr&quot;).innerHTML = new Date().getFullYear();
+</script>
+<script>
+document.getElementById(&quot;shareBtn&quot;).addEventListener(&quot;click&quot;, async () =&gt; {
+  const shareData = {
+    title: document.title,
+    text: &quot;Coba lihat halaman ini!&quot;,
+    url: window.location.href
+  };
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else {
+      // fallback kalau browser tidak mendukung Web Share API
+      prompt(&quot;Salin link ini:&quot;, window.location.href);
+    }
+  } catch (err) {
+    console.log(&#39;Gagal berbagi:&#39;, err);
+  }
+});
+</script>
+</body>
+</html>
