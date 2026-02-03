@@ -94,5 +94,42 @@ document.getElementById("shareBtn").addEventListener("click", async () => {
   }
 });
 </script>
+  <button id="shareBtn" style="
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:#ffcc00;
+  border:none;
+  padding:8px 14px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 2px 5px rgba(0,0,0,0.2);
+">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#000">
+    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7.02-4.11A2.99 2.99 0 1 0 14 5a3 3 0 0 0 0 6c.76 0 1.44-.3 1.96-.77l7.02 4.11a2.5 2.5 0 0 0 0 1.39l-7.02 4.11A2.99 2.99 0 1 0 18 19a3 3 0 0 0 0-6z"/>
+  </svg>
+  <span>Bagikan</span>
+</button>
+
+<script>
+document.getElementById("shareBtn").addEventListener("click", async () => {
+  const shareData = {
+    title: document.title,
+    text: "Coba lihat halaman ini!",
+    url: window.location.href
+  };
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else {
+      // fallback kalau browser tidak mendukung Web Share API
+      prompt("Salin link ini:", window.location.href);
+    }
+  } catch (err) {
+    console.log('Gagal berbagi:', err);
+  }
+});
+</script>
 </body>
 </html>
